@@ -697,14 +697,4 @@ This project is developed as a production-oriented process intelligence platform
 Find where your process loses time. Understand the operational evidence. Prioritize what to improve.
 
 
-### Then in GitHub
 
-1. Open **FlowLens → README.md**
-2. Click **✏️ Edit**
-3. **Ctrl + A**
-4. Paste the entire block above
-5. Click **Commit changes**
-6. Select **Commit directly to the `main` branch**
-7. Click **Commit changes**
-
-Since your Render service is already connected to the **`main` branch**, Render sh
