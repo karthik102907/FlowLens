@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  flowlens-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: flowlens-ai:latest
+    container_name: flowlens_production
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - PROJECT_NAME=FlowLens AI
+      - PORT=8000
+      - HOST=0.0.0.0
+      - SECRET_KEY=fl_prod_9a8f2c7e1b4d6a8f0e3c5a7b9d1e3f5a7c9b1d3e5f7a9c
+      - DATABASE_URL=sqlite:///flowlens.db
+      - CORS_ORIGINS=*
+      # Add your AI key below if using LLM integration
+      # - AI_API_KEY=your-gemini-or-openai-api-key
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
